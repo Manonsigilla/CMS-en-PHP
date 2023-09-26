@@ -90,7 +90,7 @@ if(isset($_POST['submitConnection'])){
                         <summary class="summary-login">Profil</summary>
                         <ul class="form-login">
                             <li><a href="profil.php">Profil</a></li>
-                            <li><a href="deconnexion.php">Déconnexion</a></li>
+                            <li><a href="../creationCMS/admin/deconnexion.php">Déconnexion</a></li>
                         </ul>
                     </details>
                 </li>

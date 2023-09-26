@@ -35,9 +35,7 @@ session_start();
             </section>
             <!-- on propose de se déconnecter -->
             <section class="profil">
-                <form action="profil.php" method="post" class="form-profil">
-                    <input type="submit" name="submit" value="Se déconnecter">
-                </form>
+                <a href="../creationCMS/admin/deconnexion.php" class="form-profil">Se déconnecter</a>
             </section>
             <section class="profil">
                 <!-- // on propose de supprimer le compte -->
