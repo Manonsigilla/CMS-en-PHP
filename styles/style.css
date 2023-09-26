@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700;800&display=swap');
+
 *{
     margin: 0;
     padding: 0;
@@ -18,9 +20,66 @@ header nav ul {
 header nav ul li a {
     text-decoration: none;
     color: #000;
-    font-weight: bold;
+    font-weight: 600;
     font-size: 18px;
+    font-family: Playfair Display, serif;
 }
 header img {
     max-width: 50%;
 }
+.form-login {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+}
+.form-login input[type="text"] {
+    margin-top: 10px;
+}
+.form-login input[type="text"],
+.form-login input[type="password"] {
+    margin-bottom: 10px;
+    padding: 5px;
+}
+.form-login input[type="submit"] {
+    align-self: flex-end;
+}
+.summary-login {
+    color: #000;
+    font-weight: 600;
+    font-size: 18px;
+    font-family: Playfair Display, serif;
+}
+
+/* PAGE INSCRIPTION */
+
+h1 {
+    text-align: center;
+    margin: 20px 0;
+    font-size: 40px;
+    font-family: Playfair Display, serif;
+}
+.form-inscription {
+    max-width: 1440px;
+    margin: 50px auto;
+    display: grid;
+    gap: 25px;
+}
+
+.form-inscription #name, .form-inscription #firstname {
+    grid-column : span 1;
+    padding: 5px;
+}
+.form-inscription #pseudo, .form-inscription #password {
+    grid-column : span 1;
+    padding: 5px;
+}
+.form-inscription #email {
+    grid-column : span 2;
+    padding: 5px;
+}
+.form-inscription input[type="submit"] {
+    grid-column : span 2;
+    justify-self: center;
+    padding: 5px;
+}
+
