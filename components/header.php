@@ -1,10 +1,10 @@
 <!-- // inclure la base de données pour le header -->
 <?php 
+// on démarre la session d'utilisateur connecté 
+session_start();
 require_once('admin/connect.php');
 // on vérifie si l'utilisateur est connecté
 if(isset($_SESSION['id_user'])){
-    // on démarre la session d'utilisateur connecté 
-    session_start();
     // on écrit la requête qui permet de récupérer les données de l'utilisateur
     $requete = "SELECT * FROM users WHERE id_user = :id";
     // on prépare la requête
@@ -66,7 +66,7 @@ if(isset($_POST['submitConnection'])){
                     "pseudo" => $pseudo
                 ));
                 $resultatNiveau = $niveauRequete->fetch();
-                if($resultatNiveau['niveau'] == "1" && $resultatNiveau['niveau'] == "2"){
+                if($resultatNiveau['niveau'] == "1" || $resultatNiveau['niveau'] == "2"){
                     $_SESSION['admin'] = $resultatNiveau['niveau'];
                     $_SESSION['modo'] = $resultatNiveau['niveau'];
                     // si c'est l'admin alors on le redirige vers la page dashboard.php

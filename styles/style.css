@@ -114,3 +114,11 @@ h1 {
     flex-direction: column;
     gap: 25px;
 }
+
+/* ADMIN */
+/* PAGE ADMIN UTILISATEURS */
+
+.listeUtilisateurs {
+    max-width: 1440px;
+    margin: 50px auto;
+}
