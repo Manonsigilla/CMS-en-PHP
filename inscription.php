@@ -13,17 +13,17 @@
         
         // on vérifie que le mot de passe fasse au moins 8 caractères
         if(strlen($pass) < 8){
-            $errorMessage = "<p>Le mot de passe doit faire au moins 8 caractères</p>";
+            $errorMessage = "Le mot de passe doit faire au moins 8 caractères";
             $isEverythingOk = false;
         }
         // Les champs ne sont pas vides alors on peut vérifier si le mot de passe fait au moins 8 caractères et que l'adresse mail n'existe pas déjà dans la base de données
         if(empty($mail) && empty($pass) && empty($name) && empty($firstname) && empty($username)){
-            $errorMessage = "<p>Les champs ne peuvent pas être vides</p>";
+            $errorMessage = "Les champs ne peuvent pas être vides";
             $isEverythingOk = false;
         }
         // on vérifie que l'email est valide
         if(!filter_var($mail, FILTER_VALIDATE_EMAIL)){
-            $errorMessage = "<p>Adresse mail invalide</p>";
+            $errorMessage = "Adresse mail invalide";
             $isEverythingOk = false;
         }
         // on vérifie que l'adresse mail n'existe pas déjà dans la base de données
@@ -37,7 +37,7 @@
             ));
             $result = $requete->fetch();
             if($result){
-                $errorMessage = "<p>Quelque chose s'est mal passé, impossible de t'inscrire</p>";
+                $errorMessage = "Quelque chose s'est mal passé, impossible de t'inscrire";
             }
             // Si les champs ne sont pas vides et que le mot de passe fait au moins 8 caractères et que l'adresse mail n'existe pas déjà dans la base de données alors on peut insérer les données dans la base de données
             if(!$result){
@@ -62,7 +62,7 @@
                     $_SESSION['password'] = $hash;
                     header('Location: profil.php');
                 } else {
-                    $errorMessage = "<p>Quelque chose s'est mal passé, impossible de t'inscrire</p>";
+                    $errorMessage = "Quelque chose s'est mal passé, impossible de t'inscrire";
                 }
             }
             

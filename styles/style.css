@@ -27,6 +27,10 @@ header nav ul li a {
 header img {
     max-width: 50%;
 }
+p {
+    font-size: 14px;
+    font-family: Inter, sans-serif;
+}
 .form-login {
     position: absolute;
     display: flex;
@@ -77,9 +81,36 @@ h1 {
     grid-column : span 2;
     padding: 5px;
 }
+.form-inscription .errorMessage {
+    grid-column : span 2;
+    justify-self: center;
+    color: red;
+    font-size: 14px;
+    font-family: Inter, sans-serif;
+}
 .form-inscription input[type="submit"] {
     grid-column : span 2;
     justify-self: center;
     padding: 5px;
 }
-
+.page-profil {
+    max-width: 1440px;
+    margin: 50px auto;
+}
+.page-profil p {
+    margin-top: 5px;
+}
+.profil-content {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+.profil-change {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}

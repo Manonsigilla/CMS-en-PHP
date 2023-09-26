@@ -84,11 +84,11 @@ if(isset($_POST['submitConnection'])){
     <nav>
         <ul>
             <li><a href="../creationCMS/index.php">Home</a></li>
-            <?php if (isset($_SESSION['id_user'])) : ?>
+            <?php if (isset($_SESSION['pseudo'])) : ?>
                 <li>
                     <details>
                         <summary class="summary-login">Profil</summary>
-                        <ul>
+                        <ul class="form-login">
                             <li><a href="profil.php">Profil</a></li>
                             <li><a href="deconnexion.php">Déconnexion</a></li>
                         </ul>
@@ -100,7 +100,7 @@ if(isset($_POST['submitConnection'])){
                 <form action="profil.php" method="post" class="form-login">
                     <input type="text" name="username" placeholder="pseudo">
                     <input type="password" name="pass" placeholder="Mot de passe">
-                    <input type="submitConnection" name="submit" value="Se connecter">
+                    <input type="submit" name="submitConnection" value="Se connecter">
                 </form>
                 <?php if (isset($errorMessage)) : ?>
                     <p><?php echo $errorMessage; ?></p>
