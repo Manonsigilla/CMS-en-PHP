@@ -66,13 +66,16 @@ if(isset($_POST['submitConnection'])){
                     "pseudo" => $pseudo
                 ));
                 $resultatNiveau = $niveauRequete->fetch();
-                if($resultatNiveau && $resultatNiveau['niveau'] == 1){
+                if($resultatNiveau['niveau'] == "1" && $resultatNiveau['niveau'] == "2"){
                     $_SESSION['admin'] = $resultatNiveau['niveau'];
+                    $_SESSION['modo'] = $resultatNiveau['niveau'];
                     // si c'est l'admin alors on le redirige vers la page dashboard.php
                     header('Location: admin/dashboard.php');
+                } else {
+                    // si c'est un membre alors on le redirige vers la page index.php
+                    header('Location: profil.php');
                 }
-                // si c'est un membre alors on le redirige vers la page index.php
-                header('Location: index.php');
+                
             }
         }
     }
@@ -97,7 +100,7 @@ if(isset($_POST['submitConnection'])){
             <?php else : ?>
                 <li><details>
                 <summary class="summary-login">Login</summary>
-                <form action="profil.php" method="post" class="form-login">
+                <form action="#" method="post" class="form-login">
                     <input type="text" name="username" placeholder="pseudo">
                     <input type="password" name="pass" placeholder="Mot de passe">
                     <input type="submit" name="submitConnection" value="Se connecter">

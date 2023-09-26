@@ -30,7 +30,7 @@
         if($isEverythingOk){
             session_start();
             require_once('admin/connect.php');
-            $requete = "SELECT nom_user as nom, prenom_user as prenom, pseudo_user as pseudo, pass_user as pass, mail_user as mail FROM users WHERE mail_user = :mail";
+            $requete = "SELECT nom_user as nom, prenom_user as prenom, pseudo_user as pseudo, pass_user as pass, mail_user as mail, niveau_user as niveau FROM users WHERE mail_user = :mail";
             $requete = $db->prepare($requete);
             $requete->execute(array(
                 "mail" => $mail
@@ -44,7 +44,7 @@
                 // On hash le mot de passe
                 $hash = password_hash($pass, PASSWORD_DEFAULT);
                 // On écrit la requête qui permet d'insérer les données dans la base de données
-                $requeteInsert = "INSERT INTO users(nom_user, prenom_user, mail_user, pseudo_user, pass_user) VALUES(:nom, :prenom, :mail, :pseudo, :pass)";
+                $requeteInsert = "INSERT INTO users(nom_user, prenom_user, mail_user, pseudo_user, pass_user, niveau_user) VALUES(:nom, :prenom, :mail, :pseudo, :pass, :niveau)";
                 // On prépare la requête
                 $requeteInsert = $db->prepare($requeteInsert);
                 // On exécute la requête avec les bonnes données
@@ -53,7 +53,8 @@
                     "prenom" => $firstname,
                     "mail" => $mail,
                     "pseudo" => $username,
-                    "pass" => $hash
+                    "pass" => $hash,
+                    "niveau" => 0
                 ));
                 // on connecte l'utilisateur automatiquement et on le redirige vers la page profil.php
                 if ($requeteInsert->rowCount() > 0) {
