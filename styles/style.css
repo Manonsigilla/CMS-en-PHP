@@ -149,6 +149,12 @@ header img {
 }
 
 /* ADMIN */
+/* DASHBOARD */
+.dashboard {
+    max-width : 1440px;
+    margin: 50px auto;
+}
+
 /* PAGE ADMIN UTILISATEURS */
 
 .listeUtilisateurs {

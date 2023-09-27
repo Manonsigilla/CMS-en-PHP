@@ -146,9 +146,9 @@ if(isset($_SESSION['admin']) || isset($_SESSION['modo'])){
                 ?>
                 <article style= "background-color: <?= $backgroundColor ?>;">
                     <h3><?php echo $article->titre_article; ?></h3>
+                    <p><?php echo $article->date_article; ?></p>
                     <img src="../<?php echo $article->image_article; ?>" alt="image article">
                     <p><?php echo $article->contenu_article; ?></p>
-                    <p><?php echo $article->date_article; ?></p>
                     <p><?php echo $article->categorie_article; ?></p>
                     <p><?php echo $article->statut_article; ?></p>
                     <a class="boutonModifier" href="modifierarticle.php?id=<?php echo $article->article_id; ?>">Modifier</a>
