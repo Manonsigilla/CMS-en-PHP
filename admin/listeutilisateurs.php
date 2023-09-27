@@ -67,7 +67,7 @@
         // on affiche un titre
         echo "<h1>Liste des utilisateurs</h1>";
         echo "<section class='listeUtilisateurs'>";
-        echo "<table>";
+        echo "<table class='tableauUtilisateurs'>";
         echo "<thead>";
         echo "<tr>";
         echo "<th>Id</th>";

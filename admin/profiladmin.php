@@ -20,7 +20,7 @@
         <h1>Profil</h1>
         <p>Bienvenue <?php echo $_SESSION['pseudo']; ?></p>
         <p>Vous êtes connecté en tant que <?php echo $_SESSION['pseudo']; ?></p>
-        <a href="../index.php">Se déconnecter</a>
+        <a href="deconnexion.php">Se déconnecter</a>
     </div>
 </body>
 </html>

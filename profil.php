@@ -1,6 +1,6 @@
-<?php
-session_start();
-?>
+<!-- <?php
+// session_start();
+?> -->
 
 <!DOCTYPE html>
 <html lang="fr">
@@ -18,8 +18,8 @@ session_start();
 <main>
     <div class="page-profil">
         <h1>Profil</h1>
-        <p>Bienvenue <?php echo $_SESSION['pseudo']; ?></p>
-        <p>Vous êtes connecté en tant que <?php echo $_SESSION['pseudo']; ?></p>
+        <h2>Bienvenue <?php echo $_SESSION['pseudo']; ?></h2>
+        <h2>Vous êtes connecté en tant que <?php echo $_SESSION['pseudo']; ?></h2>
         <section class="profil-content">
             <section class="profil profil-change">
                 <!-- // on propose de modifier le pseudo, le mot de passe ou l'avatar -->
@@ -28,6 +28,7 @@ session_start();
                     <input type="password" name="pass" placeholder="Mot de passe">
                     <input type="submit" name="submit" value="Modifier">
                 </form>
+                <h3>Ajoutez une photo de profil</h3>
                 <form action="profil.php" method="post" enctype="multipart/form-data" class="form-profil">
                     <input type="file" name="avatar" id="avatar">
                     <input type="submit" name="submit" value="Modifier">

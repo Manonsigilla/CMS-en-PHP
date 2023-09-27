@@ -5,6 +5,49 @@
     padding: 0;
     box-sizing: border-box;
 }
+h1 {
+    text-align: center;
+    margin: 20px 0;
+    font-size: 40px;
+    font-family: Playfair Display, serif;
+}
+h2 {
+    margin: 20px 0;
+    font-size: 30px;
+    font-family: Playfair Display, serif;
+}
+h3 {
+    margin: 20px 0;
+    font-size: 20px;
+    font-family: Playfair Display, serif;
+}
+p {
+    font-size: 14px;
+    font-family: Inter, sans-serif;
+}
+.errorMessage {
+    color: red;
+    font-size: 14px;
+    font-family: Inter, sans-serif;
+}
+.boutonModifier {
+    text-decoration: none;
+    padding: 5px 10px;
+    max-width: fit-content;
+    border-radius: 5px;
+    color: white;
+    background-color: #17C2B8;
+}
+.boutonSupprimer {
+    text-decoration: none;
+    padding: 5px 10px;
+    max-width: fit-content;
+    border-radius: 5px;
+    color: white;
+    background-color: #a7212e;
+}
+
+/* HEADER */
 header {
     max-width: 1440px;
     margin: 20px auto;
@@ -26,10 +69,6 @@ header nav ul li a {
 }
 header img {
     max-width: 50%;
-}
-p {
-    font-size: 14px;
-    font-family: Inter, sans-serif;
 }
 .form-login {
     position: absolute;
@@ -56,12 +95,6 @@ p {
 
 /* PAGE INSCRIPTION */
 
-h1 {
-    text-align: center;
-    margin: 20px 0;
-    font-size: 40px;
-    font-family: Playfair Display, serif;
-}
 .form-inscription {
     max-width: 1440px;
     margin: 50px auto;
@@ -119,6 +152,81 @@ h1 {
 /* PAGE ADMIN UTILISATEURS */
 
 .listeUtilisateurs {
+    max-width: 1440px;
+    margin: 50px auto;
+}
+.tableauUtilisateurs {
+    table-layout: fixed;
+    width: 100%;
+    border-collapse: collapse;
+    border: 3px solid black;
+}
+.tableauUtilisateurs th {
+    text-align: center;
+    border: 2px solid black;
+}
+.tableauUtilisateurs td {
+    border: 1px solid black;
+    padding: 10px;
+    text-align: center;
+}
+
+
+/* PAGE LISTE ARTICLES */
+
+.form_article {
+    max-width: 1440px;
+    margin: 50px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.form_article input {
+    margin-bottom: 10px;
+    padding: 5px;
+}
+.form_article label {
+    margin-bottom: 10px;
+    font-size: 14px;
+    font-family: Inter, sans-serif;
+}
+.form_article textarea {
+    margin-bottom: 10px;
+    width: 500px;
+    height: 350px;
+}
+.form_article select {
+    margin-bottom: 10px;
+    padding: 5px;
+}
+.form_article input[type="submit"] {
+    padding: 5px 10px;
+}
+.listeArticles {
+    max-width: 1440px;
+    margin: 50px auto;
+}
+.listeArticles h2 {
+    text-align: center;
+}
+.listeArticles article, .articleDetail {
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    border-radius: 8px;
+    margin: 30px auto;
+    max-width: 800px; 
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.listeArticles article img {
+    width: 100%;
+    height: 300px;
+    margin-bottom: 10px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+.articleContent {
     max-width: 1440px;
     margin: 50px auto;
 }
