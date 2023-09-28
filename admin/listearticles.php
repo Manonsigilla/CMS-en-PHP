@@ -53,7 +53,7 @@ if(isset($_SESSION['admin']) || isset($_SESSION['modo'])){
                 // on déplace l'image dans le dossier images
                 move_uploaded_file($cheminImage, $destinationImage);
                 // on récupère le chemin de l'image
-                $image = '../uploads/'.$nouveauNomImage;
+                $image = 'uploads/'.$nouveauNomImage;
             } else {
                 $errorMessage = "L'extension de l'image doit être au format png, jpg ou jpeg !";
                 $isUploadOk = false;
@@ -111,7 +111,7 @@ if(isset($_SESSION['admin']) || isset($_SESSION['modo'])){
         include_once('headeradmin.php');
     ?>
     <main>
-        <h1>Ajouter un article</h1>
+        <h1>Ajouter un article :</h1>
         <form method="post" enctype="multipart/form-data" class="form_article" action="">
             <label for="titre">Titre de l'article :</label>
             <input type="text" name="titre_article" placeholder="Titre de l'article">
@@ -144,12 +144,12 @@ if(isset($_SESSION['admin']) || isset($_SESSION['modo'])){
                     $backgroundColor = '#CA6879';
                 }
                 ?>
-                <article style= "background-color: <?= $backgroundColor ?>;">
+                <article id="article-<?php echo $article->article_id ?>" style= "background-color: <?= $backgroundColor ?>;">
                     <h3><?php echo $article->titre_article; ?></h3>
                     <p><?php echo $article->date_article; ?></p>
                     <img src="../<?php echo $article->image_article; ?>" alt="image article">
                     <p><?php echo $article->contenu_article; ?></p>
-                    <p><?php echo $article->categorie_article; ?></p>
+                    <a href="categorie.php?cat=<?php echo $article->categorie_article; ?>"><?php echo $article->categorie_article; ?></a>
                     <p><?php echo $article->statut_article; ?></p>
                     <a class="boutonModifier" href="modifierarticle.php?id=<?php echo $article->article_id; ?>">Modifier</a>
                     <a class="boutonSupprimer" href="supprimerarticle.php?id=<?php echo $article->article_id; ?>">Supprimer</a>

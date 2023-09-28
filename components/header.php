@@ -1,7 +1,7 @@
 <!-- // inclure la base de données pour le header -->
 <?php 
 // on démarre la session d'utilisateur connecté 
-session_start();
+@session_start();
 require_once('admin/connect.php');
 // on vérifie si l'utilisateur est connecté
 if(isset($_SESSION['id_user'])){

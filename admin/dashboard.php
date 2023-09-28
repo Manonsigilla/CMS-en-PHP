@@ -35,7 +35,14 @@ if(isset($_SESSION['admin']) || isset($_SESSION['modo'])){
     $requete->execute();
     // on récupère les données
     $articles = $requete->fetchAll(PDO::FETCH_OBJ);
-
+    // on écrit la requête qui permet de récupérer les 5 dernières pages
+    $requetePage = "SELECT * FROM pages ORDER BY id_page DESC LIMIT 5";
+    // on prépare la requête
+    $requetePage = $db->prepare($requetePage);
+    // on exécute la requête
+    $requetePage->execute();
+    // on récupère les données
+    $pages = $requetePage->fetchAll(PDO::FETCH_OBJ);
 }
 ?>
 
@@ -57,6 +64,8 @@ if(isset($_SESSION['admin']) || isset($_SESSION['modo'])){
         <section class="dashboard">
             <div class="listeArticles">
                 <h2>Articles</h2>
+                <a href="listearticles.php">Voir tous les articles</a>
+                <a href="listearticles.php">Ajouter un article</a>
                 <!-- on affiche les 5 derniers articles -->
                 <?php foreach($articles as $article): 
                 $backgroundColor = '';
@@ -68,22 +77,43 @@ if(isset($_SESSION['admin']) || isset($_SESSION['modo'])){
                     $backgroundColor = '#CA6879';
                 }
                 ?>
-                <article style= "background-color: <?= $backgroundColor ?>;">
+                <a href="listearticles.php#article-<?php echo $article->article_id ?>">
+                <article id="article-<?php echo $article->article_id ?>" style= "background-color: <?= $backgroundColor ?>;">
                     <h3><?php echo $article->titre_article; ?></h3>
                     <p><?php echo $article->date_article; ?></p>
                     <img src="../<?php echo $article->image_article; ?>" alt="image article">
                     <p><?php echo $article->contenu_article; ?></p>
-                    <p><?php echo $article->categorie_article; ?></p>
+                    <a href="categorie.php?cat=<?php echo $article->categorie_article; ?>"><?php echo $article->categorie_article; ?></a>
                     <p><?php echo $article->statut_article; ?></p>
                 </article>
+                </a>
                 <?php endforeach; ?>
-                <a href="listearticles.php">Voir tous les articles</a>
-                <a href="listearticles.php">Ajouter un article</a>
             </div>
-            <div class="dashboard-pages">
+            <div class="listePages">
                 <h2>Pages</h2>
                 <a href="listepages.php">Voir toutes les pages</a>
                 <a href="listepages.php">Ajouter une page</a>
+                <!-- // on affiche les 5 dernières pages -->
+                <?php foreach($pages as $page):
+                $backgroundColor = '';
+                if($page->statut_page == 'publié'){
+                    $backgroundColor = '#4BA254 ';
+                } else if($page->statut_page == 'en attente de relecture'){
+                    $backgroundColor = '#ED932E ';
+                } else if($page->statut_page == 'en brouillon'){
+                    $backgroundColor = '#CA6879';
+                }
+                ?>
+                <article id="page-<?php echo $page->id_page ?>" style= "background-color: <?= $backgroundColor ?>;">
+                    <a href="listepages.php#page-<?php echo $page->id_page ?>">
+                    <h3><?php echo $page->titre_page; ?></h3>
+                    <p><?php echo $page->date_page; ?></p>
+                    <img src="<?php echo $page->image_page; ?>" alt="image page">
+                    <p><?php echo $page->contenu_page; ?></p>
+                    <p><?php echo $page->statut_page; ?></p>
+                    </a>
+                </article>
+                <?php endforeach; ?>
             </div>
             <div class="dashboard-users">
                 <h2>Utilisateurs</h2>

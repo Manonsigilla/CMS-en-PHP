@@ -25,8 +25,17 @@ p {
     font-size: 14px;
     font-family: Inter, sans-serif;
 }
+a {
+    text-decoration: none;
+    color: #000;
+}
 .errorMessage {
     color: red;
+    font-size: 14px;
+    font-family: Inter, sans-serif;
+}
+.successMessage {
+    color: green;
     font-size: 14px;
     font-family: Inter, sans-serif;
 }
@@ -35,6 +44,8 @@ p {
     padding: 5px 10px;
     max-width: fit-content;
     border-radius: 5px;
+    border: none;
+    cursor: pointer;
     color: white;
     background-color: #17C2B8;
 }
@@ -45,6 +56,14 @@ p {
     border-radius: 5px;
     color: white;
     background-color: #a7212e;
+}
+.boutonDeconnecter {
+    text-decoration: none;
+    padding: 5px 10px;
+    max-width: fit-content;
+    border-radius: 5px;
+    color: white;
+    background-color: #2725a1;
 }
 
 /* HEADER */
@@ -126,9 +145,20 @@ header img {
     justify-self: center;
     padding: 5px;
 }
+
+/* PAGE PROFIL */
+.bienvenueSection {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 50px;
+}
 .page-profil {
     max-width: 1440px;
     margin: 50px auto;
+}
+.page-profil:nth-child(1){
+    margin-top: 50px;
 }
 .page-profil p {
     margin-top: 5px;
@@ -140,12 +170,18 @@ header img {
     flex-direction: column;
     gap: 25px;
 }
-.profil-change {
+.form-profil {
     margin-top: 10px;
     margin-bottom: 10px;
     display: flex;
     flex-direction: column;
+    align-items: flex-start;
     gap: 25px;
+}
+.avatar-profil {
+    max-width: 50px;
+    height: 50px;
+    border-radius: 50%;
 }
 
 /* ADMIN */
@@ -187,35 +223,35 @@ header img {
     flex-direction: column;
     align-items: flex-start;
 }
-.form_article input {
+.form_article input, .form_page input {
     margin-bottom: 10px;
     padding: 5px;
 }
-.form_article label {
+.form_article label, .form_page label {
     margin-bottom: 10px;
     font-size: 14px;
     font-family: Inter, sans-serif;
 }
-.form_article textarea {
+.form_article textarea, .form_page textarea {
     margin-bottom: 10px;
     width: 500px;
     height: 350px;
 }
-.form_article select {
+.form_article select, .form_page select {
     margin-bottom: 10px;
     padding: 5px;
 }
-.form_article input[type="submit"] {
+.form_article input[type="submit"], .form_page input[type="submit"] {
     padding: 5px 10px;
 }
-.listeArticles {
+.listeArticles, .listePages {
     max-width: 1440px;
     margin: 50px auto;
 }
-.listeArticles h2 {
+.listeArticles h2, .listePages h2 {
     text-align: center;
 }
-.listeArticles article, .articleDetail {
+.listeArticles article, .articleDetail, .listePages article, .pageDetail {
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
     padding: 20px;
     border-radius: 8px;
@@ -225,14 +261,26 @@ header img {
     flex-direction: column;
     gap: 10px;
 }
-.listeArticles article img {
+.listeArticles article img, .listePages article img {
     width: 100%;
     height: 300px;
     margin-bottom: 10px;
     object-fit: cover;
     border-radius: 8px;
 }
-.articleContent {
+.articleContent, .pageContent {
     max-width: 1440px;
     margin: 50px auto;
+}
+
+/* PAGES ADMIN */
+
+.pages {
+    max-width: 1440px;
+    margin: 50px auto;
+}
+.form_page {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
 }

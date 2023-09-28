@@ -86,6 +86,10 @@ if (isset($_POST['titre']) && isset($_POST['image']) && isset($_POST['contenu'])
     <title>Modification d'article</title>
 </head>
 <body>
+    <?php
+        //insertion du header
+        include_once('headeradmin.php');
+    ?>
     <h1>Modifier l'article</h1>
     <section class="articleContent">
         <?php echo $message; ?>
@@ -105,9 +109,9 @@ if (isset($_POST['titre']) && isset($_POST['image']) && isset($_POST['contenu'])
             </select>
             <label for="statut">Statut</label>
             <select name="statut" id="statut">
-                <option value="1" <?php if($article->statut_article == 1){ echo "selected"; } ?>>Publié</option>
-                <option value="2" <?php if($article->statut_article == 2){ echo "selected"; } ?>>Brouillon</option>
-                <option value="3" <?php if($article->statut_article == 2){ echo "selected"; } ?>>En attente de relecture</option>
+                <option value="Publié" <?php if($article->statut_article == 'Publié'){ echo "selected"; } ?>>Publié</option>
+                <option value="Brouillon" <?php if($article->statut_article == 'Brouillon'){ echo "selected"; } ?>>Brouillon</option>
+                <option value="En attente de relecture" <?php if($article->statut_article == 'En attente de relecture'){ echo "selected"; } ?>>En attente de relecture</option>
             </select>
             <input type="submit" value="Modifier l'article">
         </form>
