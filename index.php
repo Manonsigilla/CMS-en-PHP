@@ -26,13 +26,16 @@ $articles = $requete->fetchAll(PDO::FETCH_OBJ);
         
         <section class="listeArticles">
             <?php foreach($articles as $article): ?>
-                <article>
-                    <h3><?php echo $article->titre_article; ?></h3>
-                    <p><?php echo $article->date_article; ?></p>
-                    <img src="<?php echo $article->image_article; ?>" alt="image article">
-                    <p><?php echo $article->contenu_article; ?></p>
-                    <a href="categorie.php?cat=<?php echo $article->categorie_article; ?>"><?php echo $article->categorie_article; ?></a>
-                </article>
+                <!-- lorsque l'utilisateur clique sur l'article, l'utilisateur est redirigé vers la page detailarticle.php avec l'id de l'article cliqué dans l'url -->
+                <a href="detailarticle.php?id=<?php echo $article->article_id ?>">
+                    <article>
+                        <h3><?php echo $article->titre_article; ?></h3>
+                        <p><?php echo $article->date_article; ?></p>
+                        <img src="<?php echo $article->image_article; ?>" alt="image article">
+                        <p><?php echo $article->contenu_article; ?></p>
+                        <a href="categorie.php?cat=<?php echo $article->categorie_article; ?>"><?php echo $article->categorie_article; ?></a>
+                    </article>
+                </a>
             <?php endforeach; ?>
         </section>
     </main>
