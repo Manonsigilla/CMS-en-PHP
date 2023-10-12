@@ -141,6 +141,9 @@ footer {
     border-top: 1px solid black;
     padding: 30px 0px;
 }
+footer a:hover {
+    color: rgb(126, 126, 126);
+}
 
 /* PAGE INSCRIPTION */
 
@@ -234,6 +237,21 @@ footer {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+}
+
+/* PAGE MENTIONS LEGALES */
+
+.mentionsleg {
+    max-width: 1000px;
+    margin: 50px auto;
+    text-align: center;
+}
+
+/* PAGE A PROPOS */
+.apropos {
+    max-width: 1000px;
+    margin: 50px auto;
+    text-align: center;
 }
 
 /* ADMIN */

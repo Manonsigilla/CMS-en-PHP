@@ -6,4 +6,6 @@
         <a href="inscription.php">Inscription</a>
     <?php endif; ?>
     <a href="contact.php">Contact</a>
+    <a href="Apropos.php">À propos</a>
+    <a href="mentionsLegales.php">Mentions légales</a>
 </footer>
