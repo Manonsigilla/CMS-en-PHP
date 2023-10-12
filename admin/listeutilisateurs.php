@@ -81,23 +81,23 @@
         echo "</tr>";
         echo "</thead>";
         // on récupère les données de la base de données et on les affiche dans le tableau déjà créé en html
+        echo "<tbody>";
         if ($resultat->rowCount() == 0) {
             echo "<p>Aucun résultat</p>";
         } else {
             while($donnees = $resultat->fetch(PDO::FETCH_ASSOC)) {
-                echo "<tbody>";
                 echo "<tr>";
-                echo "<td>" . $donnees['id_user'] . "</td>";
-                echo "<td><img src='../images/avatars/" . $donnees['avatar_user'] . "' alt='avatar' class='avatar'></td>";
-                echo "<td>" . $donnees['nom_user'] . "</td>";
-                echo "<td>" . $donnees['prenom_user'] . "</td>";
-                echo "<td>" . $donnees['pseudo_user'] . "</td>";
-                echo "<td>" . $donnees['niveau_user'] . "</td>";
-                echo "<td><a class='boutonModifier' href='modifierutilisateur.php?id=" . $donnees['id_user'] . "'>Modifier</a></td>";
-                echo "<td><a class='boutonSupprimer' href='supprimerutilisateur.php?id=" . $donnees['id_user'] . "'>Supprimer</a></td>";
+                    echo "<td>" . $donnees['id_user'] . "</td>";
+                    echo "<td><img src='../images/avatars/" . $donnees['avatar_user'] . "' alt='avatar' class='avatar'></td>";
+                    echo "<td>" . $donnees['nom_user'] . "</td>";
+                    echo "<td>" . $donnees['prenom_user'] . "</td>";
+                    echo "<td>" . $donnees['pseudo_user'] . "</td>";
+                    echo "<td>" . $donnees['niveau_user'] . "</td>";
+                    echo "<td><a class='boutonModifier' href='modifierutilisateur.php?id=" . $donnees['id_user'] . "'>Modifier</a></td>";
+                    echo "<td><a class='boutonSupprimer' href='supprimerutilisateur.php?id=" . $donnees['id_user'] . "' onclick='return confirm(\"Êtes-vous sûr de vouloir supprimer cet utilisateur ?\"'>Supprimer</a></td>";
                 echo "</tr>";
-                echo "</tbody>";
             }
+            echo "</tbody>";
             echo "</table>";
             echo "</section>";
         }
