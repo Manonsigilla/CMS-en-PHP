@@ -65,6 +65,19 @@ a {
     color: white;
     background-color: #2725a1;
 }
+.liens-liste {
+    text-decoration: none;
+    color: #000;
+    font-weight: 600;
+    font-size: 18px;
+    font-family: Playfair Display, serif;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+.liens-liste a:hover {
+    color: #17C2B8;
+}
 
 /* HEADER */
 header {
@@ -228,6 +241,12 @@ footer {
 .dashboard {
     max-width : 1440px;
     margin: 50px auto;
+}
+.listeUtilisateursDash a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
 }
 
 /* PAGE ADMIN UTILISATEURS */

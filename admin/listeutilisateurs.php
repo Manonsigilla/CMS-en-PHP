@@ -93,8 +93,8 @@
                 echo "<td>" . $donnees['prenom_user'] . "</td>";
                 echo "<td>" . $donnees['pseudo_user'] . "</td>";
                 echo "<td>" . $donnees['niveau_user'] . "</td>";
-                echo "<td><a href='modifierutilisateur.php?id=" . $donnees['id_user'] . "'>Modifier</a></td>";
-                echo "<td><a href='supprimerutilisateur.php?id=" . $donnees['id_user'] . "'>Supprimer</a></td>";
+                echo "<td><a class='boutonModifier' href='modifierutilisateur.php?id=" . $donnees['id_user'] . "'>Modifier</a></td>";
+                echo "<td><a class='boutonSupprimer' href='supprimerutilisateur.php?id=" . $donnees['id_user'] . "'>Supprimer</a></td>";
                 echo "</tr>";
                 echo "</tbody>";
             }

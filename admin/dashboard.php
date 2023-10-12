@@ -64,8 +64,10 @@ if(isset($_SESSION['admin']) || isset($_SESSION['modo'])){
         <section class="dashboard">
             <div class="listeArticles">
                 <h2>Articles</h2>
+                <div class="liens-liste">
                 <a href="listearticles.php">Voir tous les articles</a>
                 <a href="listearticles.php">Ajouter un article</a>
+                </div>
                 <!-- on affiche les 5 derniers articles -->
                 <?php foreach($articles as $article): 
                 $backgroundColor = '';
@@ -91,8 +93,10 @@ if(isset($_SESSION['admin']) || isset($_SESSION['modo'])){
             </div>
             <div class="listePages">
                 <h2>Pages</h2>
-                <a href="listepages.php">Voir toutes les pages</a>
-                <a href="listepages.php">Ajouter une page</a>
+                <div class="liens-liste">
+                    <a href="listepages.php">Voir toutes les pages</a>
+                    <a href="listepages.php">Ajouter une page</a>
+                </div>
                 <!-- // on affiche les 5 dernières pages -->
                 <?php foreach($pages as $page):
                 $backgroundColor = '';
@@ -117,7 +121,33 @@ if(isset($_SESSION['admin']) || isset($_SESSION['modo'])){
             </div>
             <div class="dashboard-users">
                 <h2>Utilisateurs</h2>
-                <a href="listeutilisateurs.php">Voir tous les utilisateurs</a>
+                <div class="liens-liste">
+                    <a href="listeutilisateurs.php">Voir tous les utilisateurs</a>
+                    <a href="listeutilisateurs.php">Ajouter un utilisateur</a>
+                    <a href="listeutilisateurs.php">Supprimer un utilisateur</a>
+                </div>
+                <div class="listeUtilisateurs">
+                    <?php
+                    // on écrit la requête qui permet de récupérer les 5 derniers utilisateurs
+                    $requeteUtilisateurs = "SELECT * FROM users ORDER BY id_user DESC LIMIT 5";
+                    // on prépare la requête
+                    $requeteUtilisateurs = $db->prepare($requeteUtilisateurs);
+                    // on exécute la requête
+                    $requeteUtilisateurs->execute();
+                    // on récupère les données
+                    $users = $requeteUtilisateurs->fetchAll(PDO::FETCH_OBJ);
+                    ?>
+                    <!-- // on affiche les 5 derniers utilisateurs -->
+                    <?php foreach($users as $user): ?>
+                        <article class="listeUtilisateursDash" id="utilisateur-<?php echo $user->id_user ?>">
+                            <a href="listeutilisateurs.php#utilisateur-<?php echo $user->id_user ?>">
+                            <h3><?php echo $user->pseudo_user; ?></h3>
+                            <p><?php echo $user->mail_user; ?></p>
+                            <p><?php echo $user->niveau_user; ?></p>
+                            </a>
+                        </article>
+                    <?php endforeach; ?>
+                </div>
             </div>
         </section>
 </body>
