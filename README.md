@@ -29,17 +29,17 @@ Vous allez développer un système d’administration. Vous pouvez voir ce proje
     * [x] Connexion à l’administration
         * [x] Redirection sur la page d’accueil si le privilège n’est pas le bon
 
-    * [ ] Création de pages
-        * [ ] Titre
-        * [ ] Image mise en avant
-        * [ ] Contenu de la page
-        * [ ] Date de publication
-        * [ ] Statut de publication
-            * [ ] Publié
-            * [ ] En attente de relecture
-            * [ ] Brouillon
-    * [ ] Modification de pages
-    * [ ] Suppression de pages
+    * [x] Création de pages
+        * [x] Titre
+        * [x] Image mise en avant
+        * [x] Contenu de la page
+        * [x] Date de publication
+        * [x] Statut de publication
+            * [x] Publié
+            * [x] En attente de relecture
+            * [x] Brouillon
+    * [x] Modification de pages
+    * [x] Suppression de pages
 
     * [x] Création d'articles
         * [x] Titre
@@ -64,12 +64,12 @@ Vous allez développer un système d’administration. Vous pouvez voir ce proje
         * [x] Mot de passe
         * [x] Avatar
         * [ ] Niveau de compte
-            * [ ] Administrateur
-                * [ ] Tous les droits
+            * [x] Administrateur
+                * [x] Tous les droits
             * [ ] Modérateur
                 * [ ] Gestion des articles et des pages
-            * [ ] Membre
-                * [ ] Gestion de son compte (ajout d'avatar, modification MDP)
+            * [x] Membre
+                * [x] Gestion de son compte (ajout d'avatar, modification MDP)
     * [x] Modification de comptes
     * [x] Suppression de comptes
 
@@ -80,7 +80,7 @@ Vous allez développer un système d’administration. Vous pouvez voir ce proje
     * [ ] Affichage d'un article en particulier
     * [x] Inscription utilisateur
     * [x] Connexion utilisateur
-    * [ ] Modification profil utilisateur
+    * [x] Modification profil utilisateur
     * [x] Déconnexion
 
 Il faut organiser correctement votre code, son indentation, les commentaires et le nom des fichiers afin de ne pas vous perdre dans ce projet.
