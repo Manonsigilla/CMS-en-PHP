@@ -96,5 +96,9 @@
         <p class="errorMessage"><?= $errorMessage; ?></p>
         <input type="submit" name="submit" value="S'inscrire">
     </form>
+    <?php
+        //insertion du footer
+        include_once('components/footer.php');
+    ?>
 </body>
 </html>

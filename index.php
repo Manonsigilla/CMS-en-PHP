@@ -36,5 +36,9 @@ $articles = $requete->fetchAll(PDO::FETCH_OBJ);
             <?php endforeach; ?>
         </section>
     </main>
+    <?php
+        //insertion du footer
+        include_once('components/footer.php');
+    ?>
 </body>
 </html>

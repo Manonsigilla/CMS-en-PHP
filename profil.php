@@ -184,5 +184,9 @@ if (isset($_POST['submit'])) {
         </section>
     </div>
 </main>
+<?php
+    //insertion du footer
+    include_once('components/footer.php');
+?>
 </body>
 </html>

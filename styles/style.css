@@ -112,6 +112,23 @@ header img {
     font-family: Playfair Display, serif;
 }
 
+/* FOOTER */
+
+footer {
+    max-width: 1440px;
+    margin: 20px auto 0px auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #000;
+    font-weight: 600;
+    font-size: 18px;
+    font-family: Playfair Display, serif;
+    gap: 25px;
+    border-top: 1px solid black;
+    padding: 30px 0px;
+}
+
 /* PAGE INSCRIPTION */
 
 .form-inscription {
@@ -182,6 +199,28 @@ header img {
     max-width: 50px;
     height: 50px;
     border-radius: 50%;
+}
+
+/* PAGE CONTACT */
+
+.main-contact {
+    max-width: 1440px;
+    margin: 50px auto;
+}
+.main-contact h2 {
+    text-align: center;
+}
+.contact-form {
+    margin: 50px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+}
+.contact-form div {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
 }
 
 /* ADMIN */
