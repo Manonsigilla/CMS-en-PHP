@@ -69,7 +69,7 @@ if (isset($_POST['titre']) && isset($_POST['image']) && isset($_POST['contenu'])
     ));
 
     // on confirme que l'page a bien été modifié et on lui mets un lien pour retourner à la liste des pages
-    $message = "La page a bien été modifié ! <a href='listepages.php'>Retour</a>";
+    $message = "La page a bien été modifié ! <a class='lien-retour' href='listepages.php'>Retour</a>";
 }
 
 

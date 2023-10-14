@@ -48,12 +48,12 @@ if(isset($_POST['submitConnection'])){
         $resultat = $requete->fetch();
         // si on obtient pas de résultat alors on affiche un message d'erreur
         if(!$resultat) {
-            $errorMessage = "<p>Mauvais identifiant ou mot de passe !</p>";
+            $errorMessage = "<p class='errorMessage'>Mauvais identifiant ou mot de passe !</p>";
         }
         // si c'est bon alors on peut vérifier le mot de passe
         if($resultat){
             if(!password_verify($password, $resultat['pass'])){
-                $errorMessage = "<p>Mauvais identifiant ou mot de passe !</p>";
+                $errorMessage = "<p class='errorMessage'>Mauvais identifiant ou mot de passe !</p>";
             }
             if(password_verify($password, $resultat['pass'])){
                 // on crée une session pour l'utilisateur en tenant compte de son niveau d'utilisateur. Si l'utilisateur est un admin alors on le redirige vers la page admin.php et si l'utilisateur est un membre alors on le laisse sur la page index.php
@@ -83,10 +83,10 @@ if(isset($_POST['submitConnection'])){
 ?>
 
 <header>
-    <a href="../creationCMS/index.php"><img src="uploads/logo.png" alt="logo"></a>
+    <a href="index.php"><img src="uploads/logo.png" alt="logo"></a>
     <nav>
         <ul>
-            <li><a href="../creationCMS/index.php">Home</a></li>
+            <li><a href="index.php">Home</a></li>
             <?php if (isset($_SESSION['pseudo'])) : ?>
                 <li>
                     <details>
@@ -100,15 +100,15 @@ if(isset($_POST['submitConnection'])){
             <?php else : ?>
                 <li><details>
                 <summary class="summary-login">Login</summary>
-                <form action="#" method="post" class="form-login">
-                    <input type="text" name="username" placeholder="pseudo">
-                    <input type="password" name="pass" placeholder="Mot de passe">
-                    <input type="submit" name="submitConnection" value="Se connecter">
-                </form>
+                    <form action="#" method="post" class="form-login">
+                        <input type="text" name="username" placeholder="pseudo">
+                        <input type="password" name="pass" placeholder="Mot de passe">
+                        <input type="submit" name="submitConnection" value="Se connecter">
+                    </form>
+                </details></li>
                 <?php if (isset($errorMessage)) : ?>
                     <p><?php echo $errorMessage; ?></p>
                 <?php endif; ?>
-                </details></li>
                 <li><a href="inscription.php">Inscription</a></li>
             <?php endif; ?>
             

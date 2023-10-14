@@ -92,7 +92,17 @@
                     echo "<td>" . $donnees['nom_user'] . "</td>";
                     echo "<td>" . $donnees['prenom_user'] . "</td>";
                     echo "<td>" . $donnees['pseudo_user'] . "</td>";
-                    echo "<td>" . $donnees['niveau_user'] . "</td>";
+                    // on traduit le niveau de l'utilisateur en français
+                    $niveauTexte = "";
+                    if($donnees['niveau_user'] == 1) {
+                        $niveauTexte = "Admin";
+                    } elseif($donnees['niveau_user'] == 2) {
+                        $niveauTexte = "Modérateur";
+                    } else {
+                        $niveauTexte = "Membre";
+                    }
+
+                    echo "<td>" . $niveauTexte . "</td>";
                     echo "<td><a class='boutonModifier' href='modifierutilisateur.php?id=" . $donnees['id_user'] . "'>Modifier</a></td>";
                     echo "<td><a class='boutonSupprimer' href='supprimerutilisateur.php?id=" . $donnees['id_user'] . "' onclick='return confirm(\"Êtes-vous sûr de vouloir supprimer cet utilisateur ?\"'>Supprimer</a></td>";
                 echo "</tr>";

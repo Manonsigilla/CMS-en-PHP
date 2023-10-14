@@ -164,10 +164,10 @@ if (isset($_POST['submit'])) {
             <section class="profil profil-change">
                 <!-- // on propose de modifier le pseudo, le mot de passe ou l'avatar -->
                 <form action="profil.php" method="post" enctype="multipart/form-data" class="form-profil">
-                    <input type="text" name="pseudo" placeholder="pseudo">
-                    <input type="password" name="pass" placeholder="Mot de passe">
+                    <input type="text" name="pseudo" placeholder="pseudo" value="<?php echo $_SESSION['pseudo']; ?>">
+                    <input type="password" name="pass" placeholder="Mot de passe" value="<?php echo $_SESSION['pass']; ?>">
                     <label for="avatar">Ajoutez ou modifiez votre photo de profil :</label>
-                    <input type="file" name="avatar" id="avatar">
+                    <input type="file" name="avatar" id="avatar" ">
                     <input class="boutonModifier" type="submit" name="submit" value="Modifier">
                 </form>
                 <p class="errorMessage"><?php echo $errorMessage; ?></p>

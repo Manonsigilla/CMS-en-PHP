@@ -25,17 +25,18 @@ $article = $requete->fetch(PDO::FETCH_OBJ);
         include_once('components/header.php');
     ?>
     <main>
-        
         <section class="listeArticles">
-                <a href="detailarticle.php">
-                    <article>
-                        <h3><?php echo $article->titre_article; ?></h3>
-                        <p><?php echo $article->date_article; ?></p>
-                        <img src="<?php echo $article->image_article; ?>" alt="image article">
-                        <p><?php echo $article->contenu_article; ?></p>
-                        <a href="categorie.php?cat=<?php echo $article->categorie_article; ?>"><?php echo $article->categorie_article; ?></a>
-                    </article>
-                </a>
+            <a class="lien-retour" href="index.php">Retour à la page d'accueil</a>
+            <a href="detailarticle.php">
+                <article>
+                    <h3><?php echo $article->titre_article; ?></h3>
+                    <p><?php echo $article->date_article; ?></p>
+                    <img src="<?php echo $article->image_article; ?>" alt="image article">
+                    <p><?php echo $article->contenu_article; ?></p>
+                    <a href="categorie.php?cat=<?php echo $article->categorie_article; ?>"><?php echo $article->categorie_article; ?></a>
+                </article>
+            </a>
+            <a class="lien-retour" href="index.php">Retour à la page d'accueil</a>
         </section>
     </main>
     <?php

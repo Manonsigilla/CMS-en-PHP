@@ -78,6 +78,13 @@ a {
 .liens-liste a:hover {
     color: #17C2B8;
 }
+.lien-retour {
+    display: flex;
+    justify-content: center;
+}
+.lien-retour:hover {
+    color: rgb(126, 126, 126);
+}
 
 /* HEADER */
 header {

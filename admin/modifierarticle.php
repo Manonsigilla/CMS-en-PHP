@@ -71,7 +71,7 @@ if (isset($_POST['titre']) && isset($_POST['image']) && isset($_POST['contenu'])
     ));
 
     // on confirme que l'article a bien été modifié et on lui mets un lien pour retourner à la liste des articles
-    $message = "L'article a bien été modifié ! <a href='listearticles.php'>Retour</a>";
+    $message = "L'article a bien été modifié ! <a class='lien-retour' href='listearticles.php'>Retour</a>";
 }
 
 
@@ -103,15 +103,15 @@ if (isset($_POST['titre']) && isset($_POST['image']) && isset($_POST['contenu'])
             <textarea name="contenu" id="contenu" cols="30" rows="10"><?php echo $article->contenu_article; ?></textarea>
             <label for="categorie">Catégorie</label>
             <select name="categorie" id="categorie">
-                <option value="Culture" <?php if($article->categorie_article == 1){ echo "selected"; } ?>>Culture</option>
-                <option value="Economie" <?php if($article->categorie_article == 2){ echo "selected"; } ?>>Economie</option>
-                <option value="Politique" <?php if($article->categorie_article == 3){ echo "selected"; } ?>>Politique</option>
+                <option value="Culture" <?php if($article->categorie_article == 'Culture'){ echo "selected"; } ?>>Culture</option>
+                <option value="Economie" <?php if($article->categorie_article == 'Economie'){ echo "selected"; } ?>>Economie</option>
+                <option value="Politique" <?php if($article->categorie_article == 'Politique'){ echo "selected"; } ?>>Politique</option>
             </select>
             <label for="statut">Statut</label>
             <select name="statut" id="statut">
-                <option value="Publié" <?php if($article->statut_article == 'Publié'){ echo "selected"; } ?>>Publié</option>
-                <option value="Brouillon" <?php if($article->statut_article == 'Brouillon'){ echo "selected"; } ?>>Brouillon</option>
-                <option value="En attente de relecture" <?php if($article->statut_article == 'En attente de relecture'){ echo "selected"; } ?>>En attente de relecture</option>
+                <option value="publié" <?php if($article->statut_article == 'publié'){ echo "selected"; } ?>>Publié</option>
+                <option value="brouillon" <?php if($article->statut_article == 'brouillon'){ echo "selected"; } ?>>Brouillon</option>
+                <option value="en attente de relecture" <?php if($article->statut_article == 'en attente de relecture'){ echo "selected"; } ?>>En attente de relecture</option>
             </select>
             <input type="submit" value="Modifier l'article">
         </form>
